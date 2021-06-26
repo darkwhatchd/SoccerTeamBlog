@@ -1,38 +1,48 @@
 require "test_helper"
 
 class NoticesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get notices_index_url
-    assert_response :success
+  setup do
+    @notice = notices(:one)
   end
 
-  test "should get show" do
-    get notices_show_url
+  test "should get index" do
+    get notices_url
     assert_response :success
   end
 
   test "should get new" do
-    get notices_new_url
+    get new_notice_url
+    assert_response :success
+  end
+
+  test "should create notice" do
+    assert_difference('Notice.count') do
+      post notices_url, params: { notice: { description: @notice.description, publish_at: @notice.publish_at, title: @notice.title, user_id: @notice.user_id } }
+    end
+
+    assert_redirected_to notice_url(Notice.last)
+  end
+
+  test "should show notice" do
+    get notice_url(@notice)
     assert_response :success
   end
 
   test "should get edit" do
-    get notices_edit_url
+    get edit_notice_url(@notice)
     assert_response :success
   end
 
-  test "should get create" do
-    get notices_create_url
-    assert_response :success
+  test "should update notice" do
+    patch notice_url(@notice), params: { notice: { description: @notice.description, publish_at: @notice.publish_at, title: @notice.title, user_id: @notice.user_id } }
+    assert_redirected_to notice_url(@notice)
   end
 
-  test "should get update" do
-    get notices_update_url
-    assert_response :success
-  end
+  test "should destroy notice" do
+    assert_difference('Notice.count', -1) do
+      delete notice_url(@notice)
+    end
 
-  test "should get destroy" do
-    get notices_destroy_url
-    assert_response :success
+    assert_redirected_to notices_url
   end
 end

@@ -1,2 +1,26 @@
-<h1>Notices#show</h1>
-<p>Find me in app/views/notices/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @notice.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @notice.description %>
+</p>
+
+<p>
+  <strong>Publish at:</strong>
+  <%= @notice.publish_at.strftime('%d/%m/%y - %H:%M') %>
+</p>
+
+<%= @notice.body %>
+
+<p>
+  <strong>User:</strong>
+  <%= @notice.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_notice_path(@notice) %> |
+<%= link_to 'Back', notices_path %>

@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  description: MyString
-  body: MyString
+  description: MyText
+  publish_at: 2021-06-26 10:59:53
   user: one
 
 two:
   title: MyString
-  description: MyString
-  body: MyString
+  description: MyText
+  publish_at: 2021-06-26 10:59:53
   user: two
