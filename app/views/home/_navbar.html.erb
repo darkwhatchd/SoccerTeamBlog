@@ -1,0 +1,48 @@
+<div>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://logodownload.org/wp-content/uploads/2016/09/sao-paulo-logo-escudo-4.png" fullheight>
+        </a>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href='/'>
+            Início
+          </a>
+    
+          <a class="navbar-item" href='/notices'>
+            Notícias
+          </a>
+    
+          <a class="navbar-item" href='/history'>
+            História
+          </a>
+
+          <a class="navbar-item" href='/players'>
+            Jogadores
+          </a>
+
+          <a class="navbar-item" href='/matchs'>
+            Próximos jogos
+          </a>
+        </div>
+        <% if current_user %>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="button is-white">
+                <%= link_to "Encerrar sessão", destroy_user_session_path, :method => :delete %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+</div>

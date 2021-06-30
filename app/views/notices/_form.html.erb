@@ -21,6 +21,11 @@
     <%= form.text_area :description, size: '60x5' %>
   </div>
 
+  <div class='field'>
+    <%= form.label :cover %>
+    <%= form.file_field :cover %>
+  </div>
+
   <div class="field">
     <%= form.label :publish_at %>
     <%= form.datetime_select :publish_at %>

@@ -64,6 +64,6 @@ class NoticesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def notice_params
-      params.require(:notice).permit(:title, :description, :publish_at, :body, :user_id)
+      params.require(:notice).permit(:title, :description, :publish_at, :body, :cover, :user_id)
     end
 end

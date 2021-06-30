@@ -1,0 +1,24 @@
+<% notices_show = get_notices %>
+<% notices_show.each do |notice| %>
+  <div class='column is-4'>
+    <div class="card">
+      <div class="card-image has-text-centered">
+        <div class='image is-3by2 is-fullheight'>
+          <a href=<%="/notices/#{notice.id}"%>><%= image_tag(notice.cover, size: '600x150') %></a>
+        </div>
+      </div>
+      <div class="card-content">
+        <h1 class='title is-4'>
+          <%= notice.title %>
+        </h1>
+
+        <div class="content">
+          <p><%= notice.description %></p>
+          <div class='has-text-right'>
+            <p><%= notice.publish_at.strftime('%d/%m/%Y') %> - <%= notice.publish_at.strftime('%H:%M') %> </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
