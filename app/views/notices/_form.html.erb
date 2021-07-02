@@ -12,36 +12,53 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, class: 'label' %>
+    <div class='control'>
+      <%= form.text_field :title %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, size: '60x5' %>
+    <%= form.label :description, class: 'label' %>
+    <div class='control'>
+      <%= form.text_area :description, size: '60x5' %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id, class: 'label' %>
+    <div class='control'>
+      <%= collection_select(:notice, :user_id, User.all, :id, :name) %>
+    </div>
   </div>
 
   <div class='field'>
-    <%= form.label :cover %>
-    <%= form.file_field :cover %>
+    <%= form.label :cover, class: 'label' %>
+    <div class='control'>
+      <%= form.file_field :cover %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :publish_at %>
-    <%= form.datetime_select :publish_at %>
+    <%= form.label :publish_at, class: 'label' %>
+    <div class='control'>
+      <%= form.datetime_select :publish_at %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.rich_text_area :body %>
+    <%= form.label :body, class: 'label' %>
+    <div class='control'>
+      <%= form.rich_text_area :body, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= collection_select(:notice, :user_id, User.all, :id, :name) %>
-  </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <div class='control'>
+      <button class='button is-dark'>
+        <% form.submit %>
+        Criar notícia
+      </button>
+    </div>
   </div>
 <% end %>

@@ -3,7 +3,7 @@ class NoticesController < ApplicationController
 
   # GET /notices or /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.all.with_rich_text_body_and_embeds
   end
 
   # GET /notices/1 or /notices/1.json

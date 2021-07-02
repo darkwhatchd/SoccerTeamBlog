@@ -1,26 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @notice.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @notice.description %>
-</p>
-
-<p>
-  <strong>Publish at:</strong>
-  <%= @notice.publish_at.strftime('%d/%m/%y - %H:%M') %>
-</p>
-
-<%= @notice.body %>
-
-<p>
-  <strong>User:</strong>
-  <%= @notice.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
-<%= link_to 'Back', notices_path %>
+<div class='container has-background-white'>
+  <div class='box'>
+    <div class='has-text-centered'>
+      <h1 class='title is-4'><%= @notice.title %></h1>
+    </div>
+    <div class='has-text-left is-size-7'>
+      <p>Por: <%= @notice.user.name %></p>
+      <%= @notice.publish_at.strftime('%d/%m/%y às %H:%M') %>
+    </div>
+    <div class='has-text-centered'>
+      <%= @notice.body %>
+    </div>
+    <% if current_user %>
+      <a href=<%= "#{edit_notice_path(@notice)}" %> class="button is-dark">Editar</a>
+    <% end%>
+  </div>
+</div>

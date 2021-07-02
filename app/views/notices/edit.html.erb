@@ -1,6 +1,17 @@
-<h1>Editing Notice</h1>
+<div class='container has-background-white'>
+  <div class='box'>
+    <h1>Editing Notice</h1>
 
-<%= render 'form', notice: @notice %>
+    <%= render 'form', notice: @notice %>
+    <br>
+    <div class='buttons'>
+      <button class='button is-info is-light'>
+        <%= link_to 'Ver notícia', @notice %>
+      </button>
 
-<%= link_to 'Show', @notice %> |
-<%= link_to 'Back', notices_path %>
+      <button class='button is-info is-light'>
+        <%= link_to 'Voltar', notices_path %>
+      </button>
+    </div>
+  </div>
+</div>

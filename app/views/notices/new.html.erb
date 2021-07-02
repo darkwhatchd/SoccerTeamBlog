@@ -1,5 +1,12 @@
-<h1>New Notice</h1>
+<div class='container has-background-white'>
+  <div class='box'>
+    <h1>Nova notícia</h1>
 
-<%= render 'form', notice: @notice %>
-
-<%= link_to 'Back', notices_path %>
+    <%= render 'form', notice: @notice %>
+    <br>
+    <button class='button is-light'>
+      <%= link_to 'Voltar', notices_path %>
+    </button>
+    
+  </div>
+</div>

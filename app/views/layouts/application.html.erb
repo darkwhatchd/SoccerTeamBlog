@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <header class='container pt-4'>
+      <%= render 'home/navbar' %>
+    </header>
     <%= yield %>
+    <footer>
+      <%= render 'home/footer' %>
+    </footer>
   </body>
 </html>
