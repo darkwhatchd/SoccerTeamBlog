@@ -1,24 +1,26 @@
 # README
+This project utilizes:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby 3.0.1
 
-Things you may want to cover:
+Rails 6.1.4
 
-* Ruby version
+ActionText to create new notices
 
-* System dependencies
+BulmaCSS to have a beauty view
 
-* Configuration
+ActiveStorage
 
-* Database creation
+SQLite3
 
-* Database initialization
+Devise
 
-* How to run the test suite
+APIfootball
 
-* Services (job queues, cache servers, search engines, etc.)
+Is a practice website to test my knowledges about rails and yours functionalities.
 
-* Deployment instructions
+Use devise to login the admin account, the admin can manage notices, while visitants just see.
 
-* ...
+Use the API football to take week games of a team. For test and free use, was choosed Berekum Chelsea.
+
+Use ActionText to permit to the admin a easy field to create rich text and make notices.
