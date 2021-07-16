@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/history', to: 'history#index'
   resources :notices
   get 'home/index'
   root to: 'home#index'

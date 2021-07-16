@@ -7,7 +7,7 @@ module ApplicationHelper
       api_football_token = Rails.application.credentials[Rails.env.to_sym][:api_football_token]
       week_ago = (Time.now - 7.days).strftime('%y-%m-%d')
       week_ahead = (Time.now + 7.days).strftime('%y-%m-%d')
-      url = "#{api_football_url}?action=get_events&APIkey=#{api_football_token}&timezone=America/Sao_Paulo&from=#{week_ago}&to=#{week_ahead}&team_id=556"
+      url = "#{api_football_url}?action=get_events&APIkey=#{api_football_token}&timezone=America/Sao_Paulo&from=#{week_ago}&to=#{week_ahead}&team_id=4292"
       res = RestClient.get(url)
       matchs = JSON.parse(res.body)
     rescue RestClient::ExceptionWithResponse => e
