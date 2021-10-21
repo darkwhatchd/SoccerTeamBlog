@@ -1,36 +1,35 @@
-<% res = get_matchs %>
-<% if res.length >= 1 %>
-  <% res.each do |match| %>
+<% if @matchs[0] %>
+  <% @matchs.each do |match| %>
     <div class='column'>
       <div class='box'>
         <div class='container mb-3 has-text-justified'>
-          <% if match['match_date'] == Time.now.strftime('%Y-%m-%d') %>
-            <h1 class='subtitle is-size-7'>Hoje - <%= match['match_time'] %></h1>
-          <% elsif match['match_date'] == (Time.now + 1.days).strftime('%Y-%m-%d') %>
-            <h1 class='subtitle is-size-7'>Amanhã - <%= match['match_time'] %></h1>
-          <% elsif match['match_date'] == (Time.now - 1.days).strftime('%Y-%m-%d') %>
+          <% if match["match_date"] == Time.now.strftime("%Y-%m-%d") %>
+            <h1 class='subtitle is-size-7'>Hoje - <%= match["match_time"] %></h1>
+          <% elsif match["match_date"] == (Time.now + 1.days).strftime("%Y-%m-%d") %>
+            <h1 class='subtitle is-size-7'>Amanhã - <%= match["match_time"] %></h1>
+          <% elsif match["match_date"] == (Time.now - 1.days).strftime("%Y-%m-%d") %>
             <h1 class='subtitle is-size-7'>Ontem</h1>
           <% else %>
-            <h1 class='subtitle is-size-7'><%= Time.parse(match['match_date']).strftime('%d/%m/%y') %> - <%= match['match_time'] %></h1>
+            <h1 class='subtitle is-size-7'><%= Time.parse(match["match_date"]).strftime("%d/%m/%y") %> - <%= match["match_time"] %></h1>
           <% end %>
         
         </div>
         <div class="media">
           <div class="media-left">
-            <%= image_tag("#{match['team_home_badge']}", size: '24x24') %>
-            <%= match['match_hometeam_name'] %>
+            <%= image_tag("#{match["team_home_badge"]}", size: "24x24") %>
+            <%= match["match_hometeam_name"] %>
           </div>
           <div class="media-content has-text-right">
-            <%= match['match_hometeam_score'] %>
+            <%= match["match_hometeam_score"] %>
           </div>
         </div>
         <div class="media">
           <div class="media-left">
-            <%= image_tag("#{match['team_away_badge']}", size: '24x24') %>
-            <%= match['match_awayteam_name'] %>
+            <%= image_tag("#{match["team_away_badge"]}", size: "24x24") %>
+            <%= match["match_awayteam_name"] %>
           </div>
           <div class="media-content has-text-right">
-            <%= match['match_awayteam_score'] %>
+            <%= match["match_awayteam_score"] %>
           </div>
         </div>
       </div>
@@ -39,7 +38,7 @@
 <% else %>
   <div class='column'>
     <div class='box'>
-      <h1 class='title is-4'>
+      <h1 class='title is-6'>
         Sem partidas próximas
       </h1>
     </div>
